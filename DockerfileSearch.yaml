@@ -1,11 +1,11 @@
 title: HOW to set COPY and REMOVE params for files and directories
 copy: 
-    motive: wasted too much time for copy problem in dockerfile, the target was really messy structure, quite different from what I expect obviously
+    Motive: wasted too much time for copy problem in dockerfile, the target was really messy structure, quite different from what I expect obviously
             end up with making client angry.
-    Query: 
-        - lang:dockerfile content: COPY
+    Query: lang:dockerfile content: COPY
+    Unique: [WORKDIR /app] has no trailing slash, compared to Query.
     Examples:
-        - case: one file
+        - case:  >>>> one file 
           code:  COPY requirements.txt /app/
           attention: 
               important: It's good practice to use absolute path inside container.
@@ -14,14 +14,31 @@ copy:
                   - /app
                   - app/
                   - app
-        - case: mulitiple files at a once
+                  
+        - case: >>>> mulitiple files at a once
               - code: COPY attention_cae.py  calibration_data.py  main.py  \
                      online_models.py  samplers.py  test.py \ 
                      /app/
                  attention: enumerate files by space, also note that /app/ instead of /app or app/ or app.     and if line is too long, i can break it into multiple lines using backslash
               - code: COPY ./api/pyproject.toml ./api/poetry.lock /tmp/
                 attention: can use relative path for source param
-        - case: one directory
+                
+        - case: >>>> one directory
           code: COPY calibration_data /app/calibration_data/
           attention: instead of using relative path, always depend on absolute path, with trailing slash, leading slash
-    Unique: WORKDIR /app has no trailing slash.
+          
+        - case: >>>> multi stage copy, in other words, copy from previous stage image, not from current outside directory/file
+          code: FROM registry.access.redhat.com/ubi8/nodejs-14 as static###### \
+                ... build \
+                ARG DOCKER_IMAGE####=image-registry.openshift-image-registry.svc:5000/e1e498-tools/uvicorn-gunicorn-fastapi:python3.8-latest \
+                FROM ${DOCKER_IMAGE####} \
+                COPY --from=static###### /opt/app-root/src/build /app/static        
+
+
+DoSomethingInCertainDirectory:
+    Motive:
+    Query: lang:dockerfile content: COPY
+    Examples:
+      - case: >>>> install some package in certain directory of container 
+        code:     RUN cd /tmp && \
+                  poetry install --no-root --no-dev
