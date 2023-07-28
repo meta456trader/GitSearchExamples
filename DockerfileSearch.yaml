@@ -25,9 +25,12 @@ copy:
                 
         - case: >>>> one directory
           code: COPY calibration_data /app/calibration_data/
-          attention: 
+          attention:              - 
               - instead of using relative path, always depend on absolute path, with trailing slash, leading slash
-              - COPY calibration_date /app/       ~~~~~~~~~~~~~ this is incorrect.
+              - This is the most tricky part to work with. Please remember that copy the content of first parameter, not first param itself \
+                  COPY calibration_date /app/       ~~~~~~~~~~~~~ this is incorrect. \
+                  It's a good practice to check directory with \
+                  RUN ls
           
         - case: >>>> multi stage copy, in other words, copy from previous stage image, not from current outside directory/file
           code: FROM registry.access.redhat.com/ubi8/nodejs-14 as static###### \
