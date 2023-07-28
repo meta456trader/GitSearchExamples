@@ -1,0 +1,25 @@
+title: HOW to set COPY and REMOVE params for files and directories
+copy: 
+    motive: wasted too much time for copy problem in dockerfile, the target was really messy structure, quite different from what I expect obviously
+            end up with making client angry.
+    Query: 
+        - lang:dockerfile content: COPY
+    Examples:
+        - case: one file
+          code:  COPY requirements.txt /app/
+          attention: 
+              important: It's good practice to use absolute path inside container.
+              true: /app/ 
+              false: 
+                  - /app
+                  - app/
+                  - app
+        - case: mulitiple files at a once
+          code: COPY attention_cae.py  calibration_data.py  main.py  \
+             online_models.py  samplers.py  test.py \ 
+             /app/
+          attention: enumerate files by space, also note that /app/ instead of /app or app/ or app.              
+        - case: one directory
+          code: COPY calibration_data /app/calibration_data/
+          attention: instead of using relative path, always depend on absolute path, with trailing slash, leading slash
+    Unique: WORKDIR /app has no trailing slash.
