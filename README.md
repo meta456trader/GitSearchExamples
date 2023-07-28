@@ -1,3 +1,5 @@
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
 # GitSearchExamples
 when I create this repository, my main goal was to learn how to search git effectively via many search actions.
 
