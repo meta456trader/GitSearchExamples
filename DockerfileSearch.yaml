@@ -15,10 +15,12 @@ copy:
                   - app/
                   - app
         - case: mulitiple files at a once
-          code: COPY attention_cae.py  calibration_data.py  main.py  \
-             online_models.py  samplers.py  test.py \ 
-             /app/
-          attention: enumerate files by space, also note that /app/ instead of /app or app/ or app.              
+              - code: COPY attention_cae.py  calibration_data.py  main.py  \
+                     online_models.py  samplers.py  test.py \ 
+                     /app/
+                 attention: enumerate files by space, also note that /app/ instead of /app or app/ or app.     and if line is too long, i can break it into multiple lines using backslash
+              - code: COPY ./api/pyproject.toml ./api/poetry.lock /tmp/
+                attention: can use relative path for source param
         - case: one directory
           code: COPY calibration_data /app/calibration_data/
           attention: instead of using relative path, always depend on absolute path, with trailing slash, leading slash
