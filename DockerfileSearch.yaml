@@ -38,6 +38,7 @@ copy:
 DoSomethingInCertainDirectory:
     Motive:
     Query: lang:dockerfile content: COPY
+    Opinion: Executing multiple statement at once may reduce the number of snapshots in docker build, But not sure this is true. No Time to check this.
     Examples:
       - case: >>>> install some package in certain directory of container 
         code:     RUN cd /tmp && \
