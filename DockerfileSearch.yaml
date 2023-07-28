@@ -25,7 +25,9 @@ copy:
                 
         - case: >>>> one directory
           code: COPY calibration_data /app/calibration_data/
-          attention: instead of using relative path, always depend on absolute path, with trailing slash, leading slash
+          attention: 
+              - instead of using relative path, always depend on absolute path, with trailing slash, leading slash
+              - COPY calibration_date /app/       ~~~~~~~~~~~~~ this is incorrect.
           
         - case: >>>> multi stage copy, in other words, copy from previous stage image, not from current outside directory/file
           code: FROM registry.access.redhat.com/ubi8/nodejs-14 as static###### \
