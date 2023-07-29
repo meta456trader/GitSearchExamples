@@ -1,0 +1,4 @@
+title: Pinescript search
+zigzagIndicator: search zigzag indicators
+    Query: content:zigzag AND content://@version
+    
