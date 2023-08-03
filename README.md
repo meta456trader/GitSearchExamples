@@ -18,4 +18,6 @@ so far, my search **options**
 - [x] user: Alex
 - [x] lang: dockerfile
 - [x] content: COPY
+- [x] [regexp] content:/.*Filter.java/
+
 
