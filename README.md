@@ -19,5 +19,6 @@ so far, my search **options**
 - [x] lang: dockerfile
 - [x] content: COPY
 - [x] [regexp] content:/.*Filter.java/
+- [x] topic:sponsorship OR topic:sponsored OR topic:funded OR topic:/.*sponsor.*/
 
 
