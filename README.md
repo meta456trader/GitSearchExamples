@@ -20,5 +20,7 @@ so far, my search **options**
 - [x] content: COPY
 - [x] [regexp] content:/.*Filter.java/
 - [x] topic:sponsorship OR topic:sponsored OR topic:funded OR topic:/.*sponsor.*/
+- [X] is:issue is:open author:AlexPankratov1992
+      **caution:** AND is not working here
 
 
