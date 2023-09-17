@@ -1,10 +1,15 @@
 [readme syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 [full search option link]
+https://docs.github.com/en/search-github
 
-https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories
+https://docs.github.com/en/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax
 
 https://cli.github.com/manual/gh_search_repos
+
+
+
+
 
 ## GitSearchExamples
 when I create this repository, my main goal was to learn how to search git effectively via many search actions that are required in my development.
