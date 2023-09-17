@@ -22,5 +22,7 @@ so far, my search **options**
 - [x] topic:sponsorship OR topic:sponsored OR topic:funded OR topic:/.*sponsor.*/
 - [X] is:issue is:open author:AlexPankratov1992
       **caution:** AND is not working here
+- [X] repo:AlexPankratov1992/GitSearchExamples AND content:"repo:AlexPankratov1992/GitSearchExamples"
+      
 
 
