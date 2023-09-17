@@ -1,7 +1,9 @@
 [readme syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 [full search option link]
+
 https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories
+
 https://cli.github.com/manual/gh_search_repos
 
 ## GitSearchExamples
